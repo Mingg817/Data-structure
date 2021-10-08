@@ -14,7 +14,7 @@ typedef struct{
 int InitList_Sq(SqList &L)
 {
     L.elem=(int*)malloc(LIST_INIT_SIZT * sizeof(int));
-    //L是传入的变量L的地址，L.elem是结构体的elem方法，malloc是请求空间，返回变量,再强制转换为int的指针变量
+    //L是传入的变量L的地址，L.elem是结构体的elem方法，malloc是请求空间，返回地址,再强制转换为int的指针
     //tip：指针也要规定是说明数据类型，为了可以读取数据 eg：int *a;a[0];就知道读int字节的数据
     L.length = 0 ;
     //初始空间为0
@@ -48,7 +48,8 @@ int LocateElem_Sq(SqList L,int e,int(*compare)(int,int))
     if(i <= L.length) //如果没有循环完就退出，则说明找到了，反之没有找到
     {
         return i;
-    }else{
+    }else
+    {
         return 0;
     }
 
