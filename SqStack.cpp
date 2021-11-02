@@ -55,15 +55,15 @@ int print_all_stack(SqStack S)
     
 }
 
-int main()
-{
-    SqStack S;
-    InitStack(S);
-    Push(S,10);
-    print_all_stack(S);
-    int e;
-    Pop(S,e);
-    print_all_stack(S);
+// int main()
+// {
+//     SqStack S;
+//     InitStack(S);
+//     Push(S,10);
+//     print_all_stack(S);
+//     int e;
+//     Pop(S,e);
+//     print_all_stack(S);
 
-    return 0;
-}
+//     return 0;
+// }

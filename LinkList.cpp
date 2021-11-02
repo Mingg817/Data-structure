@@ -93,12 +93,39 @@ int ListCopy(LinkList L,LinkList &L1)
     return 1;
 }
 
+int Split_LinkList(LinkList L,LinkList &L1,LinkList &L2,int i)
+{
+    if (i<0) return -1;
+
+    InitLinkList(L1);
+    InitLinkList(L2);
+
+    ListCopy(L,L1);
+    
+    LinkList p=L1;
+    int j=0;
+    while(p && j<i)
+    {
+        p=p->next;
+        j++;
+    }
+    if(!p)
+    {
+        return -1;
+    }
+    L2->next=p->next;
+    p->next=NULL;
+
+    return 1;
+}
+
 int print_all_elem(LinkList L)
 {
     LinkList p=L->next;
     while (p)
     {
-        printf("%d ",p->data);
+        printf("%d ",(int)(p->data));
+        //cout <<  " " << dec << p->data << " " << endl;
         p=p->next;
     }
     printf("\n");   
